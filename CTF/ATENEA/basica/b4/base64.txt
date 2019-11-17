@@ -1,0 +1,14 @@
+# Decode base64 message
+
+base64 -d base64-c6d8efd649ad94af23eb2bd2af63edd0.txt
+
+
+Recuerda que cuando codificas algo en base64 NO lo estás cifrando, sino que simplemente lo estás codificando.
+
+La contraseña para superar este reto es: recuerdaquebase64NOescifrar
+
+
+# Get MD5 for password
+
+echo -n recuerdaquebase64NOescifrar | md5sum > flag.txt
+

@@ -1,0 +1,33 @@
+# Copy the MD5 number
+
+echo -n 200ceb26807d6bf99fd6f4f0d1ca54d4 > md5.txt
+
+
+# Decrypt MD5: I will use hashcat util
+
+hashcat -a 0 -m 0 md5.txt /usr/share/wordlists/rockyou.txt --force
+
+200ceb26807d6bf99fd6f4f0d1ca54d4:administrator            
+                                                          
+Session..........: hashcat
+Status...........: Cracked
+Hash.Type........: MD5
+Hash.Target......: 200ceb26807d6bf99fd6f4f0d1ca54d4
+Time.Started.....: Tue Sep  4 22:38:02 2018 (1 sec)
+Time.Estimated...: Tue Sep  4 22:38:03 2018 (0 secs)
+Guess.Base.......: File (/usr/share/wordlists/rockyou.txt)
+Guess.Queue......: 1/1 (100.00%)
+Speed.Dev.#1.....:   876.1 kH/s (1.01ms)
+Recovered........: 1/1 (100.00%) Digests, 1/1 (100.00%) Salts
+Progress.........: 15360/14343297 (0.11%)
+Rejected.........: 0/15360 (0.00%)
+Restore.Point....: 14336/14343297 (0.10%)
+Candidates.#1....: chanda -> stewart1
+HWMon.Dev.#1.....: N/A
+
+
+
+# The last step is get MD5 for pass in capital letter.
+
+echo -n ADMINISTRATOR | md5sum > flag3.txt
+

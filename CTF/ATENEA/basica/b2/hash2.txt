@@ -1,0 +1,14 @@
+# First step: encode to SHA256
+
+echo -n  AMoreSecureHashFunction | sha256sum > sha256.txt
+
+
+# Second step: encode to MD5
+
+echo -n 7fd10a0a35681ae7633a68d815a46583eff7da20b984411519a1bd1c0d3d0121 | md5sum > flag.txt
+
+
+# Other online tools
+
+https://passwordsgenerator.net/sha256-hash-generator/
+

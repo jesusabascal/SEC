@@ -1,0 +1,15 @@
+# For this first CTF we use md5sum command:
+
+echo -n TheHashFunction | md5sum > hash1.txt
+
+
+
+# Other option is use any online service as:
+
+https://www.md5online.es/cifrar-md5.html
+
+http://www.md5.cz/
+
+
+
+

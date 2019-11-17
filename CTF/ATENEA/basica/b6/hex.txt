@@ -1,0 +1,11 @@
+# Convert HEX to ASCII
+
+# In this case, I use this website:
+
+https://www.rapidtables.com/convert/number/hex-to-ascii.html
+
+50617373776f72643a2044346d7054686548337821
+
+Password: D4mpTheH3x!
+
+echo -n D4mpTheH3x! | md5sum > flag.txt
