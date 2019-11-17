@@ -1,0 +1,15 @@
+base64 -d key > key2
+----------------------------------------
+
+steghide extract -sf Mon.jpg -p Guernica
+----------------------------------------
+
+binwalk -e monalisa.jpg
+----------------------------------------
+
+git add _monalisa.jpg.extracted/
+git commit -m "u1"
+git push origin
+----------------------------------------
+
+

